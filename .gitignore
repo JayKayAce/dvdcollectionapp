@@ -1,4 +1,2 @@
-__pycache__\git*
-app\__pycache__\*
-*.pyc
-app/__pycache__/forms.cpython-37.pyc
+__pycache__/
+app/__pycache__/
