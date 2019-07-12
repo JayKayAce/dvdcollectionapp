@@ -9,5 +9,6 @@ app.config.from_object(Config)
 db = SQLAlchemy(app)
 migrate = Migrate(app = app, db = db)
 login = LoginManager(app)
+login.login_view = "login" # Requires login at first visit
 
 from app import routes, models
