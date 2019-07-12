@@ -11,4 +11,6 @@ migrate = Migrate(app = app, db = db)
 login = LoginManager(app)
 login.login_view = "login" # Requires login at first visit
 
-from app import routes, models
+from app import routes
+from app import models
+from app import errors
