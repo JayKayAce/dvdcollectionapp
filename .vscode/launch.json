@@ -11,8 +11,6 @@
             "module": "flask",
             "env": {
                 "FLASK_APP": "dvdcollection.py",
-                "MAIL_SERVER":"localhost",
-                "MAIL_PORT":8025
             },
             "args": [
                 "run",
