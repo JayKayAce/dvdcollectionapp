@@ -35,7 +35,7 @@ def index():
     page = request.args.get("page", 1, type=int)
     posts = current_user.followed_posts().paginate(
         page, app.config["POSTS_PER_PAGE"], False)
-    next_url = url_for("index", page = posts.next_num) if post.has_next else None
+    next_url = url_for("index", page = posts.next_num) if posts.has_next else None
     prev_url = url_for("index", page = posts.prev_num) if posts.has_prev else None
     return render_template('index.html', 
                             title = "Home Page", form = form, 
@@ -100,7 +100,7 @@ def user(username):
     posts = user.posts.order_by(Post.timestamp.desc()).paginate(
         page, app.config["POSTS_PER_PAGE"], False)
     next_url = url_for("user", username=user.username, page=posts.next_num)\
-        if post.has_next else None
+        if posts.has_next else None
     prev_url = url_for("user", username=user.username, page=posts.prev_num)\
         if posts.has_prev else None
     return render_template("user.html", user=user, posts=posts,
